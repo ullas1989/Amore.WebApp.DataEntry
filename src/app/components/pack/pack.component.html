@@ -1,0 +1,52 @@
+<div class="container">
+    <h2>Packs</h2>
+    <div *ngIf="addViewToggle" class="container">
+        <button type="button" class="btn btn-primary" (click)="toggleView()">Add Pack</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Pack Title</th>
+                    <th>Pack Category</th>
+                    <th>Pack Type</th>
+                    <th>Image</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pack of packs">
+                    <td>{{pack.packTitle}}</td>
+                    <td>{{pack.packCategory}}</td>
+                    <td>{{pack.packType}}</td>
+                    <td>{{pack.imageUrl}}</td>
+                    <td><a (click)="onDelete(pack.packId)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!addViewToggle" class="container">
+        <button type="button" class="btn btn-primary" (click)="toggleView()">View Packs</button>
+        <form [formGroup]="packForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Pack Title:</label>
+                <input class="form-control" formControlName="packTitle">
+            </div>
+            <div class="form-group">
+                <label>Pack Category:</label>
+                <input class="form-control" formControlName="packCategory">
+            </div>
+            <div class="form-group">
+                <label>Pack Type:</label>
+                <select class="form-control" formControlName="packType">
+                    <option value="1">Friend</option>
+                    <option value="2">Couple</option>
+                    <option value="3">Both</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Image:</label>
+                <input class="form-control" formControlName="imageUrl">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

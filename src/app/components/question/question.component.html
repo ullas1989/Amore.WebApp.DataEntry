@@ -1,0 +1,25 @@
+<div class="container">
+    <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Question Title:</label>
+            <input class="form-control" formControlName="questionTitle">
+        </div>
+        <div class="form-group">
+            <label>Option 1 Text:</label>
+            <input class="form-control" formControlName="opt1Text">
+        </div>
+        <div class="form-group">
+            <label>Option 2 Text:</label>
+            <input class="form-control" formControlName="opt2Text">
+        </div>
+        <div class="form-group">
+            <label>Option 3 Text:</label>
+            <input class="form-control" formControlName="opt3Text">
+        </div>
+        <div class="form-group">
+            <label>Option 4 Text:</label>
+            <input class="form-control" formControlName="opt4Text">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

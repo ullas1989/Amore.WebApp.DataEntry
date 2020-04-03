@@ -1,3 +1,16 @@
-<div>
-  Test
+<div class="container-fluid">
+  <a routerLink="/">Amore Admin Console</a>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pack">Pack</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/question">Question</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
 </div>
